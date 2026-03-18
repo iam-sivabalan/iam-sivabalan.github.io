@@ -553,6 +553,16 @@ footer a:hover{color:rgba(20,20,40,.7);}
   .hero-pill{font-size:.7rem;}
   footer{flex-direction:column;text-align:center;padding:1.5rem 4%;}
 }
+
+/* SCROLL ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+.fade-up.visible{opacity:1;transform:none;}
+.fade-left{opacity:0;transform:translateX(-36px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+.fade-left.visible{opacity:1;transform:none;}
+.fade-right{opacity:0;transform:translateX(36px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);}
+.fade-right.visible{opacity:1;transform:none;}
+.scale-in{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
+.scale-in.visible{opacity:1;transform:none;}
 </style>
 </head>
 <body>
@@ -613,17 +623,17 @@ footer a:hover{color:rgba(20,20,40,.7);}
     </a>
   </div>
   <div class="stats-row">
-    <div class="stat-pill"><div class="stat-val">3+</div><div class="stat-lbl">Years Exp.</div></div>
-    <div class="stat-pill"><div class="stat-val">30%</div><div class="stat-lbl">Faster Deploys</div></div>
-    <div class="stat-pill"><div class="stat-val">20%</div><div class="stat-lbl">Cost Saved</div></div>
-    <div class="stat-pill"><div class="stat-val">4</div><div class="stat-lbl">Roles · 2 Cos.</div></div>
+    <div class="stat-pill scale-in"><div class="stat-val">3+</div><div class="stat-lbl">Years Exp.</div></div>
+    <div class="stat-pill scale-in"><div class="stat-val">30%</div><div class="stat-lbl">Faster Deploys</div></div>
+    <div class="stat-pill scale-in"><div class="stat-val">20%</div><div class="stat-lbl">Cost Saved</div></div>
+    <div class="stat-pill scale-in"><div class="stat-val">4</div><div class="stat-lbl">Roles · 2 Cos.</div></div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-wrap">
-    <div class="about-card">
+    <div class="about-card fade-left">
       <span class="sec-label">About Me</span>
       <h2 class="sec-title">Cloud-Native<br>DevOps Engineer</h2>
       <p>I'm <strong>Siva Balan</strong>, an AWS DevOps Engineer with 3+ years driving cloud automation, optimizing infrastructure, and accelerating software delivery.</p>
@@ -641,7 +651,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
       </a>
     </div>
     <div>
-      <div class="av-glass">
+      <div class="av-glass fade-right">
         <div class="av-monogram">SB</div>
         <div class="av-sub">AWS · DevOps · Cloud</div>
         <div class="av-dots">
@@ -659,12 +669,12 @@ footer a:hover{color:rgba(20,20,40,.7);}
   <span class="sec-label">Technical Skills</span>
   <h2 class="sec-title">Stack & Expertise</h2>
   <div class="skills-grid">
-    <div class="sk-glass"><div class="sk-ico">☁️</div><h3>AWS Cloud</h3><p>Cloud-native infrastructure across compute, storage, networking, and serverless for scale and resilience.</p><div class="tags"><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">RDS</span><span class="tag">Lambda</span><span class="tag">VPC</span><span class="tag">IAM</span><span class="tag">Route 53</span><span class="tag">CloudWatch</span></div></div>
-    <div class="sk-glass"><div class="sk-ico">🐳</div><h3>Containers & Kubernetes</h3><p>Production workloads on EKS, node group upgrades, Helm deployments, and cluster lifecycle management.</p><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">EKS</span><span class="tag">Helm</span><span class="tag">Docker Compose</span></div></div>
-    <div class="sk-glass"><div class="sk-ico">⚙️</div><h3>CI/CD & Automation</h3><p>End-to-end pipelines cutting deployment times by 30% and increasing release reliability.</p><div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">Bash</span><span class="tag">Shell Scripting</span><span class="tag">Git</span></div></div>
-    <div class="sk-glass"><div class="sk-ico">🏗️</div><h3>Infrastructure as Code</h3><p>Version-controlled declarative cloud environments for reliable, repeatable provisioning at scale.</p><div class="tags"><span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span></div></div>
-    <div class="sk-glass"><div class="sk-ico">📊</div><h3>Monitoring & Observability</h3><p>Real-time dashboards, custom alerting, and log aggregation for proactive infrastructure health.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">CloudWatch</span></div></div>
-    <div class="sk-glass"><div class="sk-ico">🔐</div><h3>Security & Networking</h3><p>IAM least-privilege, VPC architecture, SSL/TLS lifecycle, and security group hardening for production.</p><div class="tags"><span class="tag">IAM</span><span class="tag">SSL/TLS</span><span class="tag">VPC</span><span class="tag">Security Groups</span><span class="tag">Route 53</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">☁️</div><h3>AWS Cloud</h3><p>Cloud-native infrastructure across compute, storage, networking, and serverless for scale and resilience.</p><div class="tags"><span class="tag">EC2</span><span class="tag">S3</span><span class="tag">RDS</span><span class="tag">Lambda</span><span class="tag">VPC</span><span class="tag">IAM</span><span class="tag">Route 53</span><span class="tag">CloudWatch</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">🐳</div><h3>Containers & Kubernetes</h3><p>Production workloads on EKS, node group upgrades, Helm deployments, and cluster lifecycle management.</p><div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">EKS</span><span class="tag">Helm</span><span class="tag">Docker Compose</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">⚙️</div><h3>CI/CD & Automation</h3><p>End-to-end pipelines cutting deployment times by 30% and increasing release reliability.</p><div class="tags"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">Bash</span><span class="tag">Shell Scripting</span><span class="tag">Git</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">🏗️</div><h3>Infrastructure as Code</h3><p>Version-controlled declarative cloud environments for reliable, repeatable provisioning at scale.</p><div class="tags"><span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">📊</div><h3>Monitoring & Observability</h3><p>Real-time dashboards, custom alerting, and log aggregation for proactive infrastructure health.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">CloudWatch</span></div></div>
+    <div class="sk-glass fade-up"><div class="sk-ico">🔐</div><h3>Security & Networking</h3><p>IAM least-privilege, VPC architecture, SSL/TLS lifecycle, and security group hardening for production.</p><div class="tags"><span class="tag">IAM</span><span class="tag">SSL/TLS</span><span class="tag">VPC</span><span class="tag">Security Groups</span><span class="tag">Route 53</span></div></div>
   </div>
 </section>
 
@@ -674,7 +684,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
   <h2 class="sec-title">Career Journey</h2>
   <div class="exp-wrap">
 
-    <div class="co-glass">
+    <div class="co-glass fade-up">
       <div class="co-head">
         <div class="co-icon" style="background:rgba(48,209,88,.15);border-color:rgba(48,209,88,.3)">IM</div>
         <div class="co-info"><div class="co-name">Impacteers Private Limited</div><div class="co-meta">Full-time · India, On-site · Mar 2025 – Present</div></div>
@@ -690,7 +700,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
       </div>
     </div>
 
-    <div class="co-glass">
+    <div class="co-glass fade-up">
       <div class="co-head">
         <div class="co-icon" style="background:rgba(94,92,230,.2);border-color:rgba(94,92,230,.4)">XR</div>
         <div class="co-info"><div class="co-name">Xerago</div><div class="co-meta">Full-time · Chennai, Tamil Nadu · Jul 2022 – Jan 2025</div></div>
@@ -721,7 +731,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
       </div>
     </div>
 
-    <div class="co-glass">
+    <div class="co-glass fade-up">
       <div class="co-head">
         <div class="co-icon" style="background:rgba(255,159,10,.15);border-color:rgba(255,159,10,.3)">VP</div>
         <div class="co-info"><div class="co-name">Vadivel Pyrotechs Private Limited</div><div class="co-meta">Full-time · Sivakasi, Tamil Nadu · Jun 2020 – Nov 2021</div></div>
@@ -737,7 +747,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
       </div>
     </div>
 
-    <div class="co-glass">
+    <div class="co-glass fade-up">
       <div class="co-head">
         <div class="co-icon" style="background:rgba(90,200,250,.15);border-color:rgba(90,200,250,.3)">SC</div>
         <div class="co-info"><div class="co-name">Sense Connect IT Pvt Ltd</div><div class="co-meta">Full-time · Sivakasi, Tamil Nadu · May 2017 – Jul 2019</div></div>
@@ -761,8 +771,8 @@ footer a:hover{color:rgba(20,20,40,.7);}
   <span class="sec-label">Education</span>
   <h2 class="sec-title">Academic Background</h2>
   <div class="edu-grid">
-    <div class="edu-glass"><span class="edu-icon">🎓</span><span class="edu-yr">Sep 2022 – Dec 2024</span><h3>Bachelor's Degree, Computer Science</h3><p>Tamil Nadu Open University</p></div>
-    <div class="edu-glass"><span class="edu-icon">📐</span><span class="edu-yr">May 2014 – Jun 2017</span><h3>C.Tech, Computer Science</h3><p>Arasan Ganesan College of Preceptors · Sivakasi, Tamil Nadu</p></div>
+    <div class="edu-glass fade-up"><span class="edu-icon">🎓</span><span class="edu-yr">Sep 2022 – Dec 2024</span><h3>Bachelor's Degree, Computer Science</h3><p>Tamil Nadu Open University</p></div>
+    <div class="edu-glass fade-up"><span class="edu-icon">📐</span><span class="edu-yr">May 2014 – Jun 2017</span><h3>C.Tech, Computer Science</h3><p>Arasan Ganesan College of Preceptors · Sivakasi, Tamil Nadu</p></div>
   </div>
 </section>
 
@@ -771,12 +781,12 @@ footer a:hover{color:rgba(20,20,40,.7);}
   <span class="sec-label">Projects</span>
   <h2 class="sec-title">What I've Built</h2>
   <div class="proj-grid">
-    <div class="proj-glass"><div class="proj-num">01</div><h3>IT Support Monitoring System</h3><p>Containerized domain expiry and SSL cert check scripts on EC2, running via cron with docker exec. Full Docker deployment with automated alerts.</p><div class="tags"><span class="tag">Docker</span><span class="tag">EC2</span><span class="tag">Bash</span><span class="tag">Cron</span><span class="tag">SSL</span></div></div>
-    <div class="proj-glass"><div class="proj-num">02</div><h3>EKS Cluster Lifecycle</h3><p>Production EKS management — node group upgrades, add-on lifecycle, auto-scaling, and pre-deadline upgrades before AWS auto-upgrade cutoffs.</p><div class="tags"><span class="tag">EKS</span><span class="tag">Kubernetes</span><span class="tag">AWS</span><span class="tag">Helm</span></div></div>
-    <div class="proj-glass"><div class="proj-num">03</div><h3>CI/CD Pipeline Automation</h3><p>Jenkins pipeline reducing deployment time by 30% — automated testing, Docker builds, and rolling Kubernetes deployments with promotion gates.</p><div class="tags"><span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AWS</span></div></div>
-    <div class="proj-glass"><div class="proj-num">04</div><h3>Infrastructure as Code</h3><p>Terraform and CloudFormation modules for multi-tier AWS — VPCs, EC2 ASGs, RDS, and IAM with least-privilege access policies.</p><div class="tags"><span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span><span class="tag">AWS</span></div></div>
-    <div class="proj-glass"><div class="proj-num">05</div><h3>Full Observability Stack</h3><p>Prometheus + Grafana + CloudWatch with custom dashboards, SLO alerting, and log aggregation for real-time health visibility.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">CloudWatch</span></div></div>
-    <div class="proj-glass"><div class="proj-num">06</div><h3>S3 Selective Public Access</h3><p>Fine-grained bucket policy — public read on specific prefixes for static hosting while keeping sensitive data private.</p><div class="tags"><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">AWS</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">01</div><h3>IT Support Monitoring System</h3><p>Containerized domain expiry and SSL cert check scripts on EC2, running via cron with docker exec. Full Docker deployment with automated alerts.</p><div class="tags"><span class="tag">Docker</span><span class="tag">EC2</span><span class="tag">Bash</span><span class="tag">Cron</span><span class="tag">SSL</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">02</div><h3>EKS Cluster Lifecycle</h3><p>Production EKS management — node group upgrades, add-on lifecycle, auto-scaling, and pre-deadline upgrades before AWS auto-upgrade cutoffs.</p><div class="tags"><span class="tag">EKS</span><span class="tag">Kubernetes</span><span class="tag">AWS</span><span class="tag">Helm</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">03</div><h3>CI/CD Pipeline Automation</h3><p>Jenkins pipeline reducing deployment time by 30% — automated testing, Docker builds, and rolling Kubernetes deployments with promotion gates.</p><div class="tags"><span class="tag">Jenkins</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">AWS</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">04</div><h3>Infrastructure as Code</h3><p>Terraform and CloudFormation modules for multi-tier AWS — VPCs, EC2 ASGs, RDS, and IAM with least-privilege access policies.</p><div class="tags"><span class="tag">Terraform</span><span class="tag">CloudFormation</span><span class="tag">Ansible</span><span class="tag">AWS</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">05</div><h3>Full Observability Stack</h3><p>Prometheus + Grafana + CloudWatch with custom dashboards, SLO alerting, and log aggregation for real-time health visibility.</p><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">CloudWatch</span></div></div>
+    <div class="proj-glass scale-in"><div class="proj-num">06</div><h3>S3 Selective Public Access</h3><p>Fine-grained bucket policy — public read on specific prefixes for static hosting while keeping sensitive data private.</p><div class="tags"><span class="tag">S3</span><span class="tag">IAM</span><span class="tag">AWS</span></div></div>
   </div>
 </section>
 
@@ -811,6 +821,18 @@ footer a:hover{color:rgba(20,20,40,.7);}
 </footer>
 
 <script>
+// Scroll animation observer
+const animObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      animObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up,.fade-left,.fade-right,.scale-in').forEach(el => animObs.observe(el));
+
+// Hamburger
 const ham = document.getElementById('hamburger');
 const menu = document.getElementById('mobileMenu');
 const close = document.getElementById('mobileClose');
