@@ -70,7 +70,7 @@ nav{
   z-index:1000;
   width:calc(100% - 48px);
   max-width:1000px;
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;justify-content:center;align-items:center;
   padding:.85rem 1.8rem;
   border-radius:var(--radius-pill);
   background:rgba(255,255,255,0.55);
@@ -79,7 +79,7 @@ nav{
   border:1px solid rgba(255,255,255,0.22);
   box-shadow:0 4px 24px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.25);
 }
-.logo{font-size:1.15rem;font-weight:700;color:#1a1a2e;text-decoration:none;letter-spacing:-.3px;}
+.logo{display:none;}
 .nav-links{display:flex;gap:.2rem;list-style:none;align-items:center;}
 .nav-links a{
   color:rgba(20,20,40,.75);
@@ -432,7 +432,7 @@ footer{
   position:relative;z-index:1;
   padding:2rem 6%;
   border-top:1px solid rgba(20,20,60,.1);
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+  display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:1rem;
 }
 footer p{color:rgba(20,20,40,.35);font-size:.78rem;}
 footer a{color:rgba(20,20,40,.35);font-size:.78rem;text-decoration:none;transition:color .2s;}
@@ -485,7 +485,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
   .av-monogram{font-size:5rem;}
   nav{width:calc(100% - 24px);padding:.6rem 1rem;top:10px;}
   .nav-links a{padding:.3rem .5rem;font-size:.75rem;}
-  .logo{font-size:1rem;}
+
 }
 
 /* MOBILE */
@@ -603,7 +603,6 @@ footer a:hover{color:rgba(20,20,40,.7);}
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="logo">Siva Balan</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
