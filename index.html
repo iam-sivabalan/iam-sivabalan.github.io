@@ -488,37 +488,21 @@ footer a:hover{color:rgba(20,20,40,.7);}
   .logo{font-size:1rem;}
 }
 
-/* MOBILE - show full nav scaled down */
+/* MOBILE */
 @media(max-width:640px){
-  main{padding-top:72px;}
-  nav{
-    width:calc(100% - 16px);
-    top:6px;
-    padding:.45rem .6rem;
-    border-radius:50px;
-  }
-  .logo{font-size:.78rem;font-weight:700;white-space:nowrap;}
-  .nav-links{gap:0;flex-wrap:nowrap;}
-  .nav-links a{
-    padding:.25rem .32rem;
-    font-size:.62rem;
-    white-space:nowrap;
-    border-radius:50px;
-  }
-  .nav-cta{
-    padding:.25rem .6rem!important;
-    font-size:.62rem!important;
-    border-radius:50px!important;
-  }
+  main{padding-top:0;}
+  nav{display:none;}
+  .bottom-nav{display:flex;}
+  #hero{padding-bottom:100px;}
+  section{padding:3.5rem 4%;padding-bottom:100px;}
   .hero-name{letter-spacing:-2px;}
-  .hero-role{font-size:.85rem;}
+  .hero-role{font-size:.88rem;}
   .hero-btns{flex-direction:column;align-items:center;}
   .btn-glass{width:100%;max-width:260px;justify-content:center;font-size:.82rem;}
   .stats-row{gap:.4rem;flex-wrap:wrap;justify-content:center;}
   .stat-pill{padding:.5rem .8rem;min-width:70px;}
   .stat-val{font-size:1.3rem;}
   .stat-lbl{font-size:.58rem;}
-  section{padding:3.5rem 4%;}
   .sec-title{font-size:1.6rem;letter-spacing:-.8px;margin-bottom:1.8rem;}
   .skills-grid{grid-template-columns:1fr;}
   .proj-grid{grid-template-columns:1fr;}
@@ -536,14 +520,7 @@ footer a:hover{color:rgba(20,20,40,.7);}
   .c-glass{width:100%;max-width:260px;justify-content:center;}
   .about-card{padding:1.5rem;}
   .hero-pill{font-size:.68rem;}
-  footer{flex-direction:column;text-align:center;padding:1.5rem 4%;}
-}
-
-/* VERY SMALL under 360px */
-@media(max-width:360px){
-  .nav-links a{font-size:.55rem;padding:.22rem .26rem;}
-  .logo{font-size:.7rem;}
-  .nav-cta{padding:.22rem .5rem!important;font-size:.55rem!important;}
+  footer{flex-direction:column;text-align:center;padding:1.5rem 4%;margin-bottom:80px;}
 }
 
 /* SCROLL ANIMATIONS */
@@ -555,6 +532,60 @@ footer a:hover{color:rgba(20,20,40,.7);}
 .fade-right.visible{opacity:1;transform:none;}
 .scale-in{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1);}
 .scale-in.visible{opacity:1;transform:none;}
+
+/* BOTTOM TAB BAR - mobile only */
+.bottom-nav{
+  display:none;
+  position:fixed;
+  bottom:12px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000;
+  width:calc(100% - 24px);
+  max-width:480px;
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:saturate(200%) blur(40px);
+  -webkit-backdrop-filter:saturate(200%) blur(40px);
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius:24px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.9);
+  padding:.5rem .4rem;
+  justify-content:space-around;
+  align-items:center;
+}
+.bottom-nav a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+  text-decoration:none;
+  color:rgba(20,20,40,0.5);
+  font-size:.58rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  padding:.3rem .4rem;
+  border-radius:14px;
+  transition:color .2s,background .2s;
+  min-width:44px;
+}
+.bottom-nav a svg{
+  width:20px;height:20px;
+  transition:transform .2s;
+}
+.bottom-nav a.active,
+.bottom-nav a:hover{
+  color:#7c3aed;
+  background:rgba(124,58,237,0.1);
+}
+.bottom-nav a.active svg,
+.bottom-nav a:hover svg{
+  transform:translateY(-2px);
+}
+.bottom-nav a.hire-tab{
+  color:#7c3aed;
+  background:rgba(124,58,237,0.12);
+  border:1px solid rgba(124,58,237,0.25);
+}
 </style>
 </head>
 <body>
@@ -832,5 +863,33 @@ ham.addEventListener('click', () => { ham.classList.toggle('open'); menu.classLi
 close.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); });
 document.querySelectorAll('.m-link').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); menu.classList.remove('open'); }));
 </script>
+
+<!-- BOTTOM TAB BAR (mobile) -->
+<nav class="bottom-nav" id="bottomNav">
+  <a href="#hero" class="tab-link active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Home
+  </a>
+  <a href="#about" class="tab-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    About
+  </a>
+  <a href="#skills" class="tab-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    Skills
+  </a>
+  <a href="#experience" class="tab-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+    Work
+  </a>
+  <a href="#projects" class="tab-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    Projects
+  </a>
+  <a href="#contact" class="tab-link hire-tab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8"/><path d="M1 1l22 22"/></svg>
+    Hire Me
+  </a>
+</nav>
 </body>
 </html>
